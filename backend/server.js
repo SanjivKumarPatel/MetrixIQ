@@ -4,6 +4,7 @@ import cors from 'cors'
 import connectDB from './config/db.js'
 import authRouter from './routes/authRoutes.js'
 import employeeRouter from './routes/employeeRoutes.js'
+import kpiRouter from './routes/kpiRoutes.js'
 
 dotenv.config()
 connectDB()
@@ -17,6 +18,7 @@ app.use(express.urlencoded({ extended: true }))
 
 app.use('/api/auth', authRouter)
 app.use('/api/employees', employeeRouter)
+app.use('/api/kpis', kpiRouter)
 
 const PORT = process.env.PORT || 5000
 
